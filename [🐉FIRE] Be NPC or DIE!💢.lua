@@ -90,20 +90,11 @@ local Section = Tab:AddSection({
 
 local Obby = false
 
-Tab:AddToggle({
+Tab:AddButton({
 	Name = "Obby",
-	Default = false,
-	Callback = function(Value)
-		autofarmEnabled = Value
-		if Obby then
-			spawn(function()
-				while Obby do
-					game:GetService('Players').LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-296.787506, 9.15189934, -713.220703, 0, 0, -1, 0, 1, 0, 1, 0, 0)
-					wait(300)
-				end
-			end)
-		end
-	end    
+	Callback = function()
+        game:GetService('Players').LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-296.787506, 9.15189934, -713.220703, 0, 0, -1, 0, 1, 0, 1, 0, 0)
+    end    
 })
 
 -------------------------TELEPORT--------------------------------------
@@ -123,6 +114,7 @@ Tab:AddButton({
         game:GetService('Players').LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-183.96582, 8.12671852, -749.145386, 1, 0, 0, 0, 1, 0, 0, 0, 1)
     end    
 })
+
 Tab:AddButton({
 	Name = "Blissful Baker🍪",
 	Callback = function()
