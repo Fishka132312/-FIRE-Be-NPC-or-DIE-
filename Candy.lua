@@ -1,23 +1,20 @@
 local player = game.Players.LocalPlayer
 
--- Функция для обновления персонажа
-local function updateCharacter()
+-- Функция для телепортации персонажа к Peppermint
+local function teleportToPeppermint()
     while true do
-        if player.Character and player.Character:FindFirstChild("HumanoidRootPart") then
-            player.Character.HumanoidRootPart.CFrame = game.Workspace.CollectableItems.Peppermint.CFrame
+        -- Проверяем, существует ли объект Peppermint в коллекции CollectableItems
+        local peppermint = game.Workspace.CollectableItems:FindFirstChild("Peppermint")
+        
+        -- Если объект найден, телепортируем игрока
+        if peppermint then
+            wait(0.5)  -- Ждем 1 секунду перед телепортацией
+            player.Character.HumanoidRootPart.CFrame = peppermint.CFrame  -- Телепортируем персонажа
         end
-        wait(1)
+        
+        wait(1)  -- Пауза между проверками, чтобы не перегружать процессор
     end
 end
 
--- Обработчик на смену персонажа (если персонаж умирает или респаунится)
-player.CharacterAdded:Connect(function()
-    -- Ждем немного, чтобы персонаж точно появился
-    wait(1)
-    updateCharacter()
-end)
-
--- Если персонаж уже существует, запускаем скрипт сразу
-if player.Character then
-    updateCharacter()
-end
+-- Запускаем функцию для телепортации в цикле
+teleportToPeppermint()
