@@ -7,7 +7,7 @@ local function updateProximityPrompts(part)
     local proximityPrompt = part:FindFirstChild("ProximityPrompt")
     if proximityPrompt then
         -- Изменение свойств ProximityPrompt
-        proximityPrompt.MaxActivationDistance = 10000
+        proximityPrompt.MaxActivationDistance = 100000000
         proximityPrompt.HoldDuration = 0
     end
 
