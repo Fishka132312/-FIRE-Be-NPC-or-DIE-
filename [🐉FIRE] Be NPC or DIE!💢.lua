@@ -126,5 +126,16 @@ Tab:AddButton({
   	end    
 })
 
+Tab:AddButton({
+	Name = "Script 2",
+	Callback = function()
+		getgenv().auto_collect = true -- false/true
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Bac0nHck/Scripts/refs/heads/main/bnod_ap"))(
+    'More scripts: t.me/arceusxscripts'
+)
+  	end    
+})
+
 
 OrionLib:Init()
