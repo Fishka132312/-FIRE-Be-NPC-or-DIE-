@@ -27,22 +27,11 @@ local Section = Tab:AddSection({
 	Name = "Test"
 })
 
-local autofarmEnabled = false
-
-Tab:AddToggle({
+Tab:AddButton({
 	Name = "Autofarm Candy",
-	Default = false,
-	Callback = function(Value)
-		autofarmEnabled = Value
-		if autofarmEnabled then
-			spawn(function()
-				while autofarmEnabled do
-					game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Workspace.CollectableItems.Peppermint.CFrame
-					wait(0.5)
-				end
-			end)
-		end
-	end    
+	Callback = function()
+        loadstring(game:HttpGet('https://raw.githubusercontent.com/Fishka132312/-FIRE-Be-NPC-or-DIE-/refs/heads/main/Candy.lua'))()
+  	end    
 })
 
 local autofarmlobby = false
