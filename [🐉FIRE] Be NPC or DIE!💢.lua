@@ -73,7 +73,7 @@ local Tab = Window:MakeTab({
 Tab:AddButton({
 	Name = "Auto Task",
 	Callback = function()
-        
+        loadstring(game:HttpGet('https://raw.githubusercontent.com/Fishka132312/-FIRE-Be-NPC-or-DIE-/refs/heads/main/loop.lua'))()
   	end    
 })
 
@@ -106,6 +106,37 @@ Tab:AddToggle({
 	end    
 })
 
+-------------------------TELEPORT--------------------------------------
+local Tab = Window:MakeTab({
+	Name = "Teleport",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+local Section = Tab:AddSection({
+	Name = "Christmas🎄"
+})
+
+Tab:AddButton({
+	Name = "Jack Frost❄️",
+	Callback = function()
+        game:GetService('Players').LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-183.96582, 8.12671852, -749.145386, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+    end    
+})
+Tab:AddButton({
+	Name = "Blissful Baker🍪",
+	Callback = function()
+        game:GetService('Players').LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-183.96582, 8.12671852, -749.145386, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+    end    
+})
+
+Tab:AddButton({
+	Name = "Man Deerman🦌",
+	Callback = function()
+        game:GetService('Players').LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-168.57608, 41.3938103, -756.258972, 0, 0, 1, 0, 1, -0, -1, 0, 0)
+    end    
+})
+
 -------------------------MISC--------------------------------------
 local Tab = Window:MakeTab({
 	Name = "Misc",
@@ -123,9 +154,13 @@ Tab:AddButton({
   	end    
 })
 
+Tab:AddButton({
+	Name = "Zoom",
+	Callback = function()
+        loadstring(game:HttpGet('https://raw.githubusercontent.com/Fishka132312/-FIRE-Be-NPC-or-DIE-/refs/heads/main/Zoom.lua'))()
+  	end    
+})
+
 
 
 OrionLib:Init()
-
-
-
