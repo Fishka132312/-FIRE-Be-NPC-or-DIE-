@@ -13,21 +13,6 @@ local Section = Tab:AddSection({
 })
 
 Tab:AddButton({
-	Name = "Autofarm Candy 1",
-	Callback = function()
-        getgenv().auto_collect = true -- false/true
-
-loadstring(game:HttpGet("https://raw.githubusercontent.com/Bac0nHck/Scripts/refs/heads/main/bnod_ap"))(
-    'More scripts: t.me/arceusxscripts'
-)
-  	end    
-})
-
-local Section = Tab:AddSection({
-	Name = "Test"
-})
-
-Tab:AddButton({
 	Name = "Autofarm Candy",
 	Callback = function()
         loadstring(game:HttpGet('https://raw.githubusercontent.com/Fishka132312/-FIRE-Be-NPC-or-DIE-/refs/heads/main/Candy.lua'))()
@@ -131,6 +116,15 @@ Tab:AddButton({
   	end    
 })
 
+
+Tab:AddButton({
+	Name = "Script",
+	Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/Bac0nHck/Scripts/refs/heads/main/BeNpcOrDie"))(
+   'More scripts: t.me/arceusxscripts'
+)
+  	end    
+})
 
 
 OrionLib:Init()
