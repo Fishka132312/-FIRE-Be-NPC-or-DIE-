@@ -34,22 +34,11 @@ Tab:AddButton({
   	end    
 })
 
-local autofarmlobby = false
-
-Tab:AddToggle({
+Tab:AddButton({
 	Name = "In lobby",
-	Default = false,
-	Callback = function(Value)
-		autofarmEnabled = Value
-		if autofarmlobby then
-			spawn(function()
-				while autofarmlobby do
-					game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Workspace.CollectableItems.Peppermint_20x.CFrame
-					wait(0.5)
-				end
-			end)
-		end
-	end    
+	Callback = function()
+        loadstring(game:HttpGet('https://raw.githubusercontent.com/Fishka132312/-FIRE-Be-NPC-or-DIE-/refs/heads/main/In%20lobby.lua'))()
+  	end    
 })
 
 -------------------------TASK--------------------------------------
