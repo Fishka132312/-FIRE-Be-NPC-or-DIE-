@@ -6,7 +6,7 @@ local function updateCharacter()
         if player.Character and player.Character:FindFirstChild("HumanoidRootPart") then
             player.Character.HumanoidRootPart.CFrame = game.Workspace.CollectableItems.Peppermint.CFrame
         end
-        wait(0.5)
+        wait(1)
     end
 end
 
