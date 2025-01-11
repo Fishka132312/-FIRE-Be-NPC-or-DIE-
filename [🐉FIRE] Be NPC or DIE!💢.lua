@@ -69,7 +69,7 @@ local Obby = false
 Tab:AddButton({
 	Name = "Obby",
 	Callback = function()
-        game:GetService('Players').LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-296.787506, 9.15189934, -713.220703, 0, 0, -1, 0, 1, 0, 1, 0, 0)
+        loadstring(game:HttpGet('https://raw.githubusercontent.com/Fishka132312/-FIRE-Be-NPC-or-DIE-/refs/heads/main/Obby.lua'))()
     end    
 })
 
