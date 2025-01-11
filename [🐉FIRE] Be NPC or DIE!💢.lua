@@ -4,7 +4,7 @@ local Window = OrionLib:MakeWindow({Name = "[🐉FIRE] Be NPC or DIE!💢", Hide
 -------------------------UPDATE LOG--------------------------------------
 local Tab = Window:MakeTab({
 	Name = "Update Log",
-	Icon = "rbxassetid://4483345998",
+	Icon = "rbxassetid://9180622670",
 	PremiumOnly = false
 })
 
@@ -29,7 +29,7 @@ local Section = Tab:AddSection({
 })
 
 local Section = Tab:AddSection({
-	Name = "- ⚡ **Improved Task Speed**: Tasks are now completed faster with the enhanced auto-task functionality."
+	Name = "- ⚡ **Improved Task Speed**: Tasks are now completed faster."
 })
 
 local Section = Tab:AddSection({
@@ -88,7 +88,7 @@ Tab:AddButton({
 })
 
 Tab:AddButton({
-	Name = "Script",
+	Name = "Script (If first doesn't work)",
 	Callback = function()
         loadstring(game:HttpGet("https://raw.githubusercontent.com/Bac0nHck/Scripts/refs/heads/main/BeNpcOrDie"))(
    'More scripts: t.me/arceusxscripts'
@@ -150,7 +150,7 @@ Tab:AddButton({
 
 -------------------------QUEST--------------------------------------
 local Tab = Window:MakeTab({
-	Name = "QUEST",
+	Name = "Quest",
 	Icon = "rbxassetid://4483345998",
 	PremiumOnly = false
 })
