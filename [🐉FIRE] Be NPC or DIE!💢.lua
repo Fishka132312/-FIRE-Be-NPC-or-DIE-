@@ -9,7 +9,7 @@ local Tab = Window:MakeTab({
 })
 
 local Section = Tab:AddSection({
-	Name = "Auto Farm"
+	Name = "Christmas"
 })
 
 Tab:AddButton({
@@ -23,6 +23,17 @@ Tab:AddButton({
 	Name = "In lobby",
 	Callback = function()
         loadstring(game:HttpGet('https://raw.githubusercontent.com/Fishka132312/-FIRE-Be-NPC-or-DIE-/refs/heads/main/In%20lobby.lua'))()
+  	end    
+})
+
+local Section = Tab:AddSection({
+	Name = "Normal"
+})
+
+Tab:AddButton({
+	Name = "Farm Cash",
+	Callback = function()
+        loadstring(game:HttpGet('https://raw.githubusercontent.com/Fishka132312/-FIRE-Be-NPC-or-DIE-/refs/heads/main/Money.lua'))()  
   	end    
 })
 
