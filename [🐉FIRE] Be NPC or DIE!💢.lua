@@ -1,6 +1,45 @@
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
 local Window = OrionLib:MakeWindow({Name = "[🐉FIRE] Be NPC or DIE!💢", HidePremium = false, IntroText = "[🐉FIRE] Be NPC or DIE!💢", SaveConfig = false, ConfigFolder = "NPC"})
 
+-------------------------UPDATE LOG--------------------------------------
+local Tab = Window:MakeTab({
+	Name = "Update Log",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+local Section = Tab:AddSection({
+	Name = "📜 Update Log"
+})
+
+local Section = Tab:AddSection({
+	Name = "2.3.2 (B) January 11"
+})
+
+local Section = Tab:AddSection({
+	Name = "> 🎄 **Christmas event ended**"
+})
+
+local Section = Tab:AddSection({
+	Name = "- ❌ AutoFarm Event is no longer active."
+})
+
+local Section = Tab:AddSection({
+	Name = "- 💰 **New feature**: **Auto Farm Cash** added for easier farming."
+})
+
+local Section = Tab:AddSection({
+	Name = "- ⚡ **Improved Task Speed**: Tasks are now completed faster with the enhanced auto-task functionality."
+})
+
+local Section = Tab:AddSection({
+	Name = "- ⏳ **Auto Quest**: Coming soon."
+})
+
+local Section = Tab:AddSection({
+	Name = "🚀 **Stay tuned for updates!**"
+})
+
 -------------------------AUTO FARM--------------------------------------
 local Tab = Window:MakeTab({
 	Name = "Auto Farm",
