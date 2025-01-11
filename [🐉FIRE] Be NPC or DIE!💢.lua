@@ -148,5 +148,12 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/Bac0nHck/Scripts/refs
   	end    
 })
 
+Tab:AddButton({
+	Name = "Anti AFK",
+	Callback = function()
+		loadstring(game:HttpGet('https://raw.githubusercontent.com/luca5432/Roblox-ANTI-AFK-SCRIPT/refs/heads/main/Script'))()
+  	end    
+})
+
 
 OrionLib:Init()
