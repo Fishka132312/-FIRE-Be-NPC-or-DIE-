@@ -142,7 +142,26 @@ Tab:AddButton({
 Tab:AddButton({
 	Name = "Zoom",
 	Callback = function()
-        loadstring(game:HttpGet('https://raw.githubusercontent.com/Fishka132312/-FIRE-Be-NPC-or-DIE-/refs/heads/main/Zoom.lua'))()
+		local Player = game.Players.LocalPlayer
+local Camera = workspace.CurrentCamera
+
+-- Настройки
+local maxZoomDistance = 1000 -- Максимальное расстояние для отдаления камеры
+local minZoomDistance = 0.5 -- Минимальное расстояние для приближения камеры
+
+-- Событие изменения настроек камеры
+Player.CameraMaxZoomDistance = maxZoomDistance
+Player.CameraMinZoomDistance = minZoomDistance
+
+-- Функция для настройки камеры
+local function overrideCameraLimits()
+    Player.CameraMaxZoomDistance = maxZoomDistance
+    Player.CameraMinZoomDistance = minZoomDistance
+end
+
+-- Повторное применение при необходимости
+Player:GetPropertyChangedSignal("CameraMaxZoomDistance"):Connect(overrideCameraLimits)
+Player:GetPropertyChangedSignal("CameraMinZoomDistance"):Connect(overrideCameraLimits)
   	end    
 })
 
