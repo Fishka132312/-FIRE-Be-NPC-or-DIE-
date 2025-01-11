@@ -30,11 +30,15 @@ Tab:AddButton({
   	end    
 })
 
--------------------------TASK--------------------------------------
+-------------------------AUTO TASK--------------------------------------
 local Tab = Window:MakeTab({
 	Name = "Auto Task",
 	Icon = "rbxassetid://4483345998",
 	PremiumOnly = false
+})
+
+local Section = Tab:AddSection({
+	Name = "Auto Task"
 })
 
 Tab:AddButton({
@@ -112,14 +116,8 @@ local Tab = Window:MakeTab({
 	PremiumOnly = false
 })
 
-Tab:AddButton({
-	Name = "Speed",
-	Callback = function()
-        while true do
-            game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 50
-            wait(0.1)
-        end
-  	end    
+local Section = Tab:AddSection({
+	Name = "Coming Soon"
 })
 
 -------------------------MISC--------------------------------------
@@ -127,6 +125,10 @@ local Tab = Window:MakeTab({
 	Name = "Misc",
 	Icon = "rbxassetid://4483345998",
 	PremiumOnly = false
+})
+
+local Section = Tab:AddSection({
+	Name = "Misc"
 })
 
 Tab:AddButton({
@@ -162,17 +164,6 @@ end
 -- Повторное применение при необходимости
 Player:GetPropertyChangedSignal("CameraMaxZoomDistance"):Connect(overrideCameraLimits)
 Player:GetPropertyChangedSignal("CameraMinZoomDistance"):Connect(overrideCameraLimits)
-  	end    
-})
-
-Tab:AddButton({
-	Name = "Script",
-	Callback = function()
-		getgenv().auto_collect = true -- false/true
-
-loadstring(game:HttpGet("https://raw.githubusercontent.com/Bac0nHck/Scripts/refs/heads/main/bnod_ap"))(
-    'More scripts: t.me/arceusxscripts'
-)
   	end    
 })
 
