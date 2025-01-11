@@ -63,5 +63,5 @@ while true do
             processFolder(folder)
         end
     end
-    wait(5)
+    wait(1)
 end
