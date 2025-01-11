@@ -110,7 +110,7 @@ local Section = Tab:AddSection({
 local Obby = false
 
 Tab:AddButton({
-	Name = "Obby",
+	Name = "Auto Obby",
 	Callback = function()
         loadstring(game:HttpGet('https://raw.githubusercontent.com/Fishka132312/-FIRE-Be-NPC-or-DIE-/refs/heads/main/Obby.lua'))()
     end    
