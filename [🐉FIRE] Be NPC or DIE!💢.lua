@@ -9,20 +9,13 @@ local Tab = Window:MakeTab({
 })
 
 local Section = Tab:AddSection({
-	Name = "Christmas"
+	Name = "Event"
 })
 
 Tab:AddButton({
-	Name = "Autofarm Candy",
+	Name = "Autofarm Event (No event yet)",
 	Callback = function()
         loadstring(game:HttpGet('https://raw.githubusercontent.com/Fishka132312/-FIRE-Be-NPC-or-DIE-/refs/heads/main/Candy.lua'))()
-  	end    
-})
-
-Tab:AddButton({
-	Name = "In lobby",
-	Callback = function()
-        loadstring(game:HttpGet('https://raw.githubusercontent.com/Fishka132312/-FIRE-Be-NPC-or-DIE-/refs/heads/main/In%20lobby.lua'))()
   	end    
 })
 
@@ -48,6 +41,15 @@ Tab:AddButton({
 	Name = "Auto Task",
 	Callback = function()
         loadstring(game:HttpGet('https://raw.githubusercontent.com/Fishka132312/-FIRE-Be-NPC-or-DIE-/refs/heads/main/loop.lua'))()
+  	end    
+})
+
+Tab:AddButton({
+	Name = "Script",
+	Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/Bac0nHck/Scripts/refs/heads/main/BeNpcOrDie"))(
+   'More scripts: t.me/arceusxscripts'
+)
   	end    
 })
 
@@ -103,6 +105,23 @@ Tab:AddButton({
     end    
 })
 
+-------------------------QUEST--------------------------------------
+local Tab = Window:MakeTab({
+	Name = "QUEST",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+Tab:AddButton({
+	Name = "Speed",
+	Callback = function()
+        while true do
+            game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 50
+            wait(0.1)
+        end
+  	end    
+})
+
 -------------------------MISC--------------------------------------
 local Tab = Window:MakeTab({
 	Name = "Misc",
@@ -127,18 +146,8 @@ Tab:AddButton({
   	end    
 })
 
-
 Tab:AddButton({
 	Name = "Script",
-	Callback = function()
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/Bac0nHck/Scripts/refs/heads/main/BeNpcOrDie"))(
-   'More scripts: t.me/arceusxscripts'
-)
-  	end    
-})
-
-Tab:AddButton({
-	Name = "Script 2",
 	Callback = function()
 		getgenv().auto_collect = true -- false/true
 
