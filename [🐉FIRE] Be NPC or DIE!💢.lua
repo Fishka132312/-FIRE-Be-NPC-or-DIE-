@@ -258,5 +258,12 @@ workspace.Lobby.DoubleVotes:Destroy()
   	end    
 })
 
+Tab:AddButton({
+	Name = "Infiniteyield",
+	Callback = function()
+		loadstring(game:HttpGet('https://raw.githubusercontent.com/edgeiy/infiniteyield/master/source'))()
+  	end    
+})
+
 
 OrionLib:Init()
