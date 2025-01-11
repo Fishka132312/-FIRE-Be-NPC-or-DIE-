@@ -1,43 +1,60 @@
 -- Список возможных папок, которые нужно проверять
-local targetFolders = {"Hospital", "Hotel", "RailYard", "Office", "Prison", "ShoppingMall", "Town","PirateOutpost"}
+local targetFolders = {"Hospital", "Hotel", "RailYard", "Office", "Prison", "ShoppingMall", "Town", "PirateOutpost"}
+
+-- Получение персонажа игрока
+local player = game.Players.LocalPlayer
+local character = player.Character or player.CharacterAdded:Wait()
+
+-- Функция для поворота персонажа к объекту с ProximityPrompt
+local function facePrompt(part)
+    local rootPart = character:FindFirstChild("HumanoidRootPart")
+    if rootPart and part:IsA("BasePart") then
+        local lookAt = (part.Position - rootPart.Position).Unit
+        rootPart.CFrame = CFrame.new(rootPart.Position, rootPart.Position + lookAt)
+    end
+end
+
 -- Функция для изменения всех ProximityPrompt внутри партов и их дочерних объектов
 local function updateProximityPrompts(part)
-    -- Проверка на наличие ProximityPrompt в парте или его дочерних объектах
     local proximityPrompt = part:FindFirstChild("ProximityPrompt")
     if proximityPrompt then
-        -- Изменение свойств ProximityPrompt
         proximityPrompt.MaxActivationDistance = 100000000
         proximityPrompt.HoldDuration = 0
+        proximityPrompt.RequiresLineOfSight = false -- Отключаем проверку прямой видимости
+
+        task.defer(function()
+            facePrompt(proximityPrompt.Parent) -- Повернуть персонажа к объекту
+            proximityPrompt:InputHoldBegin()
+            wait(0.1)
+            proximityPrompt:InputHoldEnd()
+        end)
     end
-    -- Обрабатываем все дочерние объекты парта, чтобы найти ProximityPrompt
     for _, child in pairs(part:GetChildren()) do
         if child:IsA("Part") then
-            updateProximityPrompts(child) -- Рекурсивно проверяем дочерние части
+            updateProximityPrompts(child)
         elseif child:IsA("Model") then
-            updateProximityPrompts(child) -- Также проверяем дочерние модели
+            updateProximityPrompts(child)
         end
     end
 end
+
 -- Функция для обработки найденной папки (hospital, hotel, или RailYard)
 local function processFolder(folder)
-    -- Если папка содержит подпапку "Detail", удалить её
     local detailFolder = folder:FindFirstChild("Detail")
     if detailFolder then
         detailFolder:Destroy()
     end
     
-    -- Найти папку "Tasks" внутри текущей папки
     local tasksFolder = folder:FindFirstChild("Tasks")
     if tasksFolder then
-        -- Пройти по всем партах внутри "Tasks"
         for _, part in pairs(tasksFolder:GetChildren()) do
-            -- Если это часть (Part) или модель, проверяем её на наличие ProximityPrompt
             if part:IsA("Part") or part:IsA("Model") then
                 updateProximityPrompts(part)
             end
         end
     end
 end
+
 -- Основной цикл для проверки всех папок в Workspace
 while true do
     for _, folderName in pairs(targetFolders) do
@@ -46,6 +63,5 @@ while true do
             processFolder(folder)
         end
     end
-    -- Повторяем проверку через небольшое задержку (например, каждые 5 секунд)
     wait(5)
 end
